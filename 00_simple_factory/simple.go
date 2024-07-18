@@ -2,7 +2,7 @@ package simplefactory
 
 import "fmt"
 
-// API is interface
+// API is interfaced
 type API interface {
 	Say(name string) string
 }
