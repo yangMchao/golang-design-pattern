@@ -1,5 +1,7 @@
 package adapter
 
+import "log"
+
 // Target 是适配的目标接口
 type Target interface {
 	Request() string
@@ -37,5 +39,6 @@ type adapter struct {
 
 // Request 实现Target接口
 func (a *adapter) Request() string {
+	log.Println("代码对象适配器被调用")
 	return a.SpecificRequest()
 }
