@@ -68,10 +68,12 @@ func TestClone(t *testing.T) {
 
 func TestCloneFromManager(t *testing.T) {
 	c := manager.Get("t1").Clone()
-
 	t1 := c.(*Type1)
+	t2 := c.(*Type1)
 	if t1.name != "type1" {
 		t.Fatal("error")
 	}
-
+	t1.D.dDCopy = "c"
+	log.Println(t2.D.dDCopy)
+	log.Println(t1.D.dDCopy)
 }
