@@ -15,14 +15,13 @@ func (s singleton) foo() {}
 
 var (
 	instance *singleton
-	once     sync.Once
+	syncOnce sync.Once
 )
 
 // GetInstance 用于获取单例模式对象
 func GetInstance() Singleton {
-	once.Do(func() {
+	syncOnce.Do(func() {
 		instance = &singleton{}
 	})
-
 	return instance
 }
