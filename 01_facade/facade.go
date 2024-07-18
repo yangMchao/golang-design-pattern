@@ -4,8 +4,8 @@ import "fmt"
 
 func NewAPI() API {
 	return &apiImpl{
-		a: NewAModuleAPI(),
-		b: NewBModuleAPI(),
+		A: NewAModuleAPI(),
+		B: NewBModuleAPI(),
 	}
 }
 
@@ -16,14 +16,14 @@ type API interface {
 
 // apiImpl facade implement
 type apiImpl struct {
-	a AModuleAPI
-	b BModuleAPI
+	A AModuleAPI
+	B BModuleAPI
 }
 
 func (a *apiImpl) Test() string {
-	aRet := a.a.TestA()
-	bRet := a.b.TestB()
-	return fmt.Sprintf("%s\n%s", aRet, bRet)
+	aRet := a.A.TestA()
+	bRet := a.B.TestB()
+	return fmt.Sprintf("%s \t %s", aRet, bRet)
 }
 
 // NewAModuleAPI return new AModuleAPI
