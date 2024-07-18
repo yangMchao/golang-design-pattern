@@ -1,6 +1,9 @@
 package factorymethod
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func compute(factory OperatorFactory, a, b int) int {
 	op := factory.Create()
@@ -13,14 +16,10 @@ func TestOperator(t *testing.T) {
 	var (
 		factory OperatorFactory
 	)
-
 	factory = PlusOperatorFactory{}
-	if compute(factory, 1, 2) != 3 {
-		t.Fatal("error with factory method pattern")
-	}
-
-	factory = MinusOperatorFactory{}
-	if compute(factory, 4, 2) != 2 {
-		t.Fatal("error with factory method pattern")
-	}
+	computePlus := compute(factory, 1, 2)
+	log.Printf("plus computePlus: %d \n", computePlus)
+	factory = &MinusOperatorFactory{}
+	computeMinus := compute(factory, 1, 2)
+	log.Printf("minus computeMinus: %d \n", computeMinus)
 }

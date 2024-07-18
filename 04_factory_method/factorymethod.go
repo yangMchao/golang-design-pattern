@@ -49,7 +49,7 @@ func (o PlusOperator) Result() int {
 // MinusOperatorFactory 是 MinusOperator 的工厂类
 type MinusOperatorFactory struct{}
 
-func (MinusOperatorFactory) Create() Operator {
+func (*MinusOperatorFactory) Create() Operator {
 	return &MinusOperator{
 		OperatorBase: &OperatorBase{},
 	}
