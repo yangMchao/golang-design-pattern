@@ -1,6 +1,8 @@
 package observer
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Subject struct {
 	observers []Observer
