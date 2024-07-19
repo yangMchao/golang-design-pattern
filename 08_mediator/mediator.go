@@ -11,7 +11,6 @@ type CDDriver struct {
 
 func (c *CDDriver) ReadData() {
 	c.Data = "music,image"
-
 	fmt.Printf("CDDriver: reading data %s\n", c.Data)
 	GetMediatorInstance().changed(c)
 }
