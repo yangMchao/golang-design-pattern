@@ -73,6 +73,8 @@ func TestDynamicFactory(t *testing.T) {
 			if mainDAO == nil || detailDAO == nil {
 				t.Errorf("工厂创建的对象不能为nil")
 			}
+			mainDAO.SaveOrderMain()
+			detailDAO.SaveOrderDetail()
 		})
 	}
 }
