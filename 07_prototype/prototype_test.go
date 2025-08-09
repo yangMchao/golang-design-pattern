@@ -4,6 +4,15 @@ import "testing"
 
 var manager *PrototypeManager
 
+func init() {
+	manager = NewPrototypeManager()
+
+	t1 := &Type1{
+		name: "type1",
+	}
+	manager.Set("t1", t1)
+}
+
 type Type1 struct {
 	name string
 }
@@ -13,14 +22,14 @@ func (t *Type1) Clone() Cloneable {
 	return &tc
 }
 
-type Type2 struct {
-	name string
-}
-
-func (t *Type2) Clone() Cloneable {
-	tc := *t
-	return &tc
-}
+//type Type2 struct {
+//	name string
+//}
+//
+//func (t *Type2) Clone() Cloneable {
+//	tc := *t
+//	return &tc
+//}
 
 func TestClone(t *testing.T) {
 	t1 := manager.Get("t1")
@@ -40,13 +49,14 @@ func TestCloneFromManager(t *testing.T) {
 		t.Fatal("error")
 	}
 
-}
+	t1.name = "update"
 
-func init() {
-	manager = NewPrototypeManager()
+	c2 := manager.Get("t1").Clone()
 
-	t1 := &Type1{
-		name: "type1",
+	t2 := c2.(*Type1)
+
+	if t2.name != "type1" {
+		t.Fatal("error")
 	}
-	manager.Set("t1", t1)
+
 }
