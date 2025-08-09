@@ -1,13 +1,13 @@
 package factorymethod
 
-// Operator 是被封装的实际类接口
+// Operator 是被封装的实际类接口  产品接口（Operator）
 type Operator interface {
 	SetA(int)
 	SetB(int)
 	Result() int
 }
 
-// OperatorFactory 是工厂接口
+// OperatorFactory 是工厂接口 创建者接口
 type OperatorFactory interface {
 	Create() Operator
 }
