@@ -59,6 +59,7 @@ type Mediator struct {
 
 var mediator *Mediator
 
+// GetMediatorInstance 单例中介者
 func GetMediatorInstance() *Mediator {
 	if mediator == nil {
 		mediator = &Mediator{}
@@ -66,6 +67,7 @@ func GetMediatorInstance() *Mediator {
 	return mediator
 }
 
+// 状态变更处理
 func (m *Mediator) changed(i interface{}) {
 	switch inst := i.(type) {
 	case *CDDriver:
