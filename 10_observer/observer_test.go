@@ -10,6 +10,7 @@ func ExampleObserver() {
 	subject.Attach(reader3)
 
 	subject.UpdateContext("observer mode")
+
 	// Output:
 	// reader1 receive observer mode
 	// reader2 receive observer mode

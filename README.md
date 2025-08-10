@@ -38,4 +38,3 @@ Go 语言设计模式的实例代码
 * [访问者模式（Visitor）](https://github.com/senghoo/golang-design-pattern/tree/master/23_visitor)
 
 
-你是资深go 语言开发专家，对08_mediator下进行分析，请必须参考00_simple_factory的README.md 格式，补充08_mediator的EADME.md内容
