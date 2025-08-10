@@ -30,12 +30,13 @@ func (t *template) Download(uri string) {
 	fmt.Print("finish downloading\n")
 }
 
+// 写
 func (t *template) save() {
 	fmt.Print("default save\n")
 }
 
 type HTTPDownloader struct {
-	*template
+	*template //组合
 }
 
 func NewHTTPDownloader() Downloader {
