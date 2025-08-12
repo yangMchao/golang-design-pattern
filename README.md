@@ -38,4 +38,4 @@ Go 语言设计模式的实例代码
 * [访问者模式（Visitor）](https://github.com/senghoo/golang-design-pattern/tree/master/23_visitor)
 
 
-你是资深go 语言开发专家，对11_command下进行分析，请必须参考01_facade的README.md 格式，补充11_command的EADME.md内容
+你是资深go 语言开发专家，对20_decorator下进行分析，请必须参考18_flyweight的README.md 格式，补充到README.md内容
